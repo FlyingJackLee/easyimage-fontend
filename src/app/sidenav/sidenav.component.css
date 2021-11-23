@@ -1,0 +1,31 @@
+.web-side-nav{
+  background-color: #52CACC;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 11% 80% 10%;
+  grid-template-columns: 100%;
+}
+
+.logo{
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.web-grid-single-row{
+  display: table-cell;
+  text-align: center;
+}
+
+.web-grid-single-row-vertical
+{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+}
+.big-icon{
+  width: 30px;
+  height: 30px;
+
+}

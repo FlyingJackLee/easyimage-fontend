@@ -1,0 +1,54 @@
+<div class="web-inner-center web-main-container">
+  <div class="web-board-container web-inner-center">
+    <div class="web-login-container">
+      <div class="web-inner-center web-form-title">
+        Login to your account
+      </div>
+
+      <div class="web-inner-center web-form-filed-title">
+        Username
+      </div>
+
+      <div class="web-inner-center">
+        <mat-form-field class="web-form-field" hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Enter username</mat-label>
+          <input [formControl]="username" required  id="username" matInput #input maxlength="10" placeholder="nougat">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="web-inner-center web-form-filed-title">
+        Password
+      </div>
+      <div class="web-inner-center">
+        <mat-form-field class="web-form-field"  appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input [formControl]="password" required matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button [disabled]="!username.valid" type="submit" mat-raised-button class="web-red-button" (click)="submit()">Login</button>
+        <button mat-raised-button  class="web-red-button ">Sign Up</button>
+      </div>
+
+      <div class="web-form-secondary-link ">
+        <a routerLink="/forget">Forget your password?</a>
+      </div>
+
+      <div *ngIf="message.length > 0" class="web-tip">
+        <div class="">
+          {{ message }}
+        </div>
+        <button mat-icon-button color="primary" (click)="closeTip()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>

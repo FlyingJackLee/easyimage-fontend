@@ -1,0 +1,38 @@
+.web-container{
+  display:grid;
+  grid-template-columns: 8.33% 91.67%;
+  height: 100%;
+}
+
+.web-main-body{
+  display: grid;
+  grid-template-rows: 8% 92%;
+}
+.web-inner-center{
+  display: flex;
+  justify-content: center;
+}
+
+.prepareRoute{
+  height: 100%;
+  display: grid;
+  grid-template-rows: 0% 100%;
+}
+
+.web-footer{
+  position: fixed;
+  bottom: 0;
+  opacity: 80%;
+  z-index: -99;
+}
+
+
+
+
+/*.web-top-nav-link{*/
+/*  color: black;*/
+/*  font-size: 1em;*/
+/*  text-underline: none;*/
+/*}*/
+
+
