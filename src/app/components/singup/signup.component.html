@@ -1,0 +1,72 @@
+<div class="web-inner-center web-main-container">
+  <div class="web-board-container web-inner-center">
+    <div class="web-signup-container">
+      <div class="web-inner-center web-form-title">
+        Create new account
+      </div>
+
+      <div class="web-inner-center web-form-filed-title">
+        Username
+      </div>
+
+      <div class="web-inner-center">
+        <mat-form-field class="web-form-field" hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Enter username</mat-label>
+          <input [formControl]="username" required  id="username" matInput #input maxlength="15" placeholder="nougat">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="web-inner-center web-form-filed-title">
+        Email
+      </div>
+      <div class="web-inner-center">
+        <mat-form-field class="web-form-field"  appearance="fill">
+          <mat-label>Enter your Email</mat-label>
+          <input  [formControl]="email" required matInput type="email" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="email.hasError('email') &&  !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="web-inner-center web-form-filed-title">
+        Password
+      </div>
+
+      <form [formGroup]="passwordForm" class="web-form-doublePassword" >
+        <mat-form-field class="web-form-field"  appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input formControlName="password" required matInput [type]="hide ? 'password' : 'text'" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+
+          <mat-error *ngIf="passwordForm.hasError('required', 'password')">
+            Please enter your new password
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="web-form-field"  appearance="fill">
+          <mat-label>Confirm your password</mat-label>
+          <input formControlName="confirmPassword" required matInput [type]="hide ? 'password' : 'text'" [errorStateMatcher]="passwordMatcher" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+
+          <mat-error *ngIf="passwordForm.hasError('notSame')">
+            Passwords do not match
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+      <div class="web-inner-center">
+        <button [disabled]="!username.valid || !passwordForm.valid || !email.valid" type="submit" mat-raised-button class="web-red-button" (click)="submit()">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>

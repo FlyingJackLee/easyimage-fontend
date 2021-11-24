@@ -2,7 +2,7 @@ import {animate, animateChild, group, query, style, transition, trigger} from "@
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('HomePage <=> LoginPage', [
+    transition('* <=> *', [
       //fisrt make sure the <div> is relative so the position would be normal with bound.
       style({ position: 'relative' }),
 

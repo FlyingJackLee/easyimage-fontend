@@ -42,5 +42,11 @@ export class AppCookieService {
     document.cookie = key + '=' + (value || '');
   }
 
+  clear(){
+    this.remove("username");
+    this.remove("token");
+    this.remove('isLogin');
+  }
+
 
 }

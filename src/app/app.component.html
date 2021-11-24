@@ -4,16 +4,41 @@
 
   <div class="web-main-body">
     <nav mat-tab-nav-bar>
-        <a mat-tab-link *ngFor="let link of links" [routerLink]="link.path"
+      <ng-container *ngFor="let link of links">
+        <a mat-tab-link *ngIf="!link.hide" [routerLink]="link.path"
            (click)="activateLink = link"
            [active]="activateLink.path == link.path"> {{link.title}}
         </a>
+      </ng-container>
     </nav>
     <div [@routeAnimations]="prepareRoute(outlet)" class="prepareRoute">
-      <router-outlet #outlet="outlet"></router-outlet>
+      <router-outlet (deactivate)="refreshAccountArea()"  (activate)="displayFooter($event)" #outlet="outlet"></router-outlet>
     </div>
-    <div *ngIf="activateLink.footer == true" class="web-footer z-index-bottom">
+    <div *ngIf="isFooterDisplay" class="web-footer z-index-bottom">
       <img src="assets/menu-bg.png">
     </div>
+  </div>
+</div>
+
+
+<div class="web-account">
+  <div *ngIf="signInOrLogOut" class="web-inner-center web-account-secondary" >
+    <a mat-icon-button aria-label="Login"   (click)="goToLoginPage()">
+      <mat-icon class="web-account-icon">login</mat-icon>
+    </a>
+    <div class="web-account-title">Sign In</div>
+  </div>
+  <div *ngIf="!signInOrLogOut" class="web-inner-center web-account-secondary" >
+    <a mat-icon-button aria-label="Log Out"  (click)="logout()">
+      <mat-icon class="web-account-icon">logout</mat-icon>
+    </a>
+    <div class="web-account-title">Sign Out</div>
+  </div>
+
+  <div class="web-inner-center web-account-secondary" >
+    <a mat-icon-button aria-label="Sign up"   (click)="goToSingUpPage()">
+      <mat-icon class="web-account-icon">new_releases</mat-icon>
+    </a>
+    <div class="web-account-title">Sign Up</div>
   </div>
 </div>

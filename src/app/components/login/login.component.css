@@ -1,0 +1,21 @@
+.web-red-button{
+  width: 130px;
+  height: 40px;
+  border: 0px;
+  border-radius: 10px;
+  margin-left: 20px;
+  color: #f8c9cb;
+  background-color: #e41e26;
+  box-shadow: 5px 5px 17px 7px rgba(255,0,0,0.17);
+  font-family: "Roboto Light", serif;
+}
+
+.web-login-container{
+  margin-top: 20px;
+  width: 60%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows:12% 11% 14% 11% 14% 12% 10% 12%;
+}

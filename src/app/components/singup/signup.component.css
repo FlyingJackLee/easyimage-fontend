@@ -1,0 +1,28 @@
+.web-signup-container{
+  margin-top: 10px;
+  width: 60%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows:11.4% 5% 15.8% 5% 13% 5% 27% 17.8%;
+}
+
+.web-red-button{
+  width: 130px;
+  height: 40px;
+  border: 0px;
+  border-radius: 10px;
+  margin-left: 20px;
+  color: #f8c9cb;
+  background-color: #e41e26;
+  box-shadow: 5px 5px 17px 7px rgba(255,0,0,0.17);
+  font-family: "Roboto Light", serif;
+}
+
+.web-form-doublePassword{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 50% 50%;
+}

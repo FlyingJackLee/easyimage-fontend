@@ -5,5 +5,5 @@ export interface RestBody {
 }
 
 type dataMap = {
-  [key:string]:string;
+  [key:string]:string|null;
 }

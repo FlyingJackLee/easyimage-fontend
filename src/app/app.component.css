@@ -26,6 +26,36 @@
   z-index: -99;
 }
 
+.web-account{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 190px;
+  height: 80px;
+  background-color: #B3BBFC;
+
+  z-index: 99;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.web-account-secondary{
+  display: grid;
+  grid-template-rows: 50% 50%;
+
+}
+.web-account-title{
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+
+}
+
+.web-account-icon{
+  height: 40px;
+  margin: 10px;
+}
+
 
 
 
