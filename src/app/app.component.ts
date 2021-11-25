@@ -75,18 +75,28 @@ export class AppComponent {
   }
 
   logout(){
-    this.userService.logout().subscribe((response:RestBody)  =>{
-        if (response.code == 200){
+    this.userService.logout().subscribe(
+      {
+        next:(response:RestBody)  =>{
+          if (response.code == 200){
             this.toastr.success("You have already existed.","Log Out",{
               timeOut:3000
             });
-        }
-        this.cookieService.remove("username");
-        this.cookieService.remove("token");
-        this.cookieService.remove("isLogin");
+          }
+          this.cookieService.remove("username");
+          this.cookieService.remove("token");
+          this.cookieService.remove("isLogin");
 
-        this.refreshAccountArea();
-    });
+          this.refreshAccountArea();
+        },
+        error:err => {
+          this.cookieService.remove("username");
+          this.cookieService.remove("token");
+          this.cookieService.remove("isLogin");
+          this.refreshAccountArea();
+        }
+      }
+    );
   }
 }
 

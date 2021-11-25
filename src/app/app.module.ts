@@ -20,8 +20,11 @@ import {MatInputModule} from "@angular/material/input";
 import { HomepageComponent } from './components/homepage/homepage.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
-import { SignupComponent } from './components/singup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { UploadComponent } from './components/upload/upload.component';
+import {MatOptionModule} from "@angular/material/core";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatStepperModule} from "@angular/material/stepper";
 
 
 @NgModule({
@@ -39,7 +42,7 @@ import { UploadComponent } from './components/upload/upload.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(
       {
-        positionClass:'toast-top-right'
+        positionClass: 'toast-top-right'
       }
     ),
     ReactiveFormsModule,
@@ -54,6 +57,9 @@ import { UploadComponent } from './components/upload/upload.component';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatStepperModule,
 
   ],
   providers: [],

@@ -1,9 +1,47 @@
 <div class="web-inner-center web-main-container">
   <div class="web-board-container web-inner-center">
-    <div class="web-signup-container">
+    <div class="web-upload-container">
       <div class="web-inner-center web-form-title">
-        Create new library
+        Upload new images
       </div>
+      <mat-stepper #stepper orientation="vertical" [linear]="linear" >
+        <mat-step [stepControl]="nameForm" >
+          <form [formGroup]="nameForm" >
+            <ng-template matStepLabel>Pick or create a library</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label>Library Name</mat-label>
+              <input type="text"
+                     placeholder="Pick or Create"
+                     aria-label="Library Name"
+                     matInput
+                     formControlName="library_name"
+                     [matAutocomplete]="auto">
+
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" >
+                <mat-option *ngFor="let option of presentLibrary" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <div  [hidden]="nameForm.valid ? '' : 'hidden'">
+              <button mat-button matStepperNext (click)="nameConfirm()" >Next</button>
+            </div>
+          </form>
+
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Upload files</ng-template>
+            <mat-label>Upload images</mat-label>
+            <input type="file"
+                   placeholder="Pick or Create"
+                   aria-label="Images Upload"
+                   [formControl]="fileFiled">
+        </mat-step>
+
+      </mat-stepper>
+
+
 
 
     </div>
