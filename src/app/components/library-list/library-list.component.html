@@ -1,0 +1,9 @@
+<div class="web-library-list">
+  <app-image-card
+    *ngFor="let library of libraries"
+    [url]="library.cover" cardType="web-image-card-big-1" [cardTitle]="library.name" >
+    <button class="web-image-card-extension" mat-mini-fab color="accent" (click)="goToLibrary(library.name)">
+      <mat-icon>fmd_good</mat-icon>
+    </button>
+  </app-image-card>
+</div>

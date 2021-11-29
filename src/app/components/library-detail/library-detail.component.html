@@ -1,0 +1,52 @@
+<div class="web-detail-main-container">
+  <div class="web-gallery-container">
+      <app-image-card *ngFor="let image of images;let i = index"
+        [url]="basePath + image.filePath"
+        [cardTitle]="image.name"
+        [cardType]="styleGenerate(i)"
+        [extensionPosition]="'right-close'"
+      >
+        <button class="web-detail-button" (click)="select(image)"  mat-icon-button color="warn">
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </app-image-card>
+  </div>
+
+  <div class="web-detail-select-list">
+      <div class="web-detail-select-list-item" *ngFor="let selectImage of selectedImages">
+        <p nowrap>{{selectImage.name | slice:0:10 }}</p>
+
+        <div>
+          <span class="web-detail-select-list-tag-title web-float"><i>Tags:</i></span>
+          <ng-container *ngFor="let tag of selectImage.tags">
+            <div class="web-detail-select-list-tag web-float">
+              {{tag.type}}
+            </div>
+          </ng-container>
+        </div>
+
+        <button mat-icon-button color="accent" (click)="unselect(selectImage)">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </div>
+  </div>
+
+  <div class="web-detail-tip">
+    <div class="web-detail-tip-bar">
+    </div>
+
+
+    <div class="web-detail-tip-main">
+
+      <div class="web-detail-tip-title">
+        <img src="assets/detail_bar.png" />
+      </div>
+
+      <button mat-mini-fab color="primary" class="web-detail-tip-button">
+        <mat-icon>shortcut</mat-icon>
+      </button>
+
+    </div>
+  </div>
+
+</div>

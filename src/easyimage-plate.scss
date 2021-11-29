@@ -37,7 +37,7 @@ $easyimage-blue-palette:(
   600:#528dcc,
   700:#487bba,
   800:#416ba7,
-  900:#334e87,
+  900:#283593,
   contrast: (
     50: rgba(black, 0.87),
     100: rgba(black, 0.87),
@@ -61,7 +61,32 @@ $easyimage-red-palette:(
   600:#bf3e3a,
   700:#ae3634,
   800:#a0312e,
-  900:#932723,
+  900:#ba0900,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,)
+);
+
+
+$easyimage-green-palette:(
+  50:#f9eaec,
+  100:#f0cacf,
+  200:#9fcced,
+  300:#c67071,
+  400:#cc5452,
+  500:#cd463c,
+  600:#bf3e3a,
+  700:#ae3634,
+  800:#a0312e,
+  900:#ba0900,
   contrast: (
     50: rgba(black, 0.87),
     100: rgba(black, 0.87),
@@ -94,7 +119,7 @@ $easyimage-black-palette:(
     300: white,
     400: white,
     500: white,
-    600: white,
+    600: #e5e5e5,
     700: white,
     800: white,
     900: white,)
@@ -127,6 +152,7 @@ $easyimag-black-theme:mat.define-light-theme((
 
 
 $easyimage-blue-primary:mat.define-palette($easyimage-blue-palette,300);
+$easyimage-blue-deep:mat.define-palette($easyimage-blue-palette,900);
 
 $easyimag-blue-theme:mat.define-light-theme((
   color: (
@@ -137,17 +163,15 @@ $easyimag-blue-theme:mat.define-light-theme((
 ));
 
 $easyimage-red-primary:mat.define-palette($easyimage-red-palette,300);
-
+$easyimage-white-primary:mat.define-palette($easyimage-black-palette,50);
 
 $easyimag-red-theme:mat.define-light-theme((
   color: (
     primary: $easyimage-red-primary,
     accent: $easyimage-blue-primary,
-    warn: $easyimage-blue-primary,
+    warn: $easyimage-white-primary,
   )
 ));
-
-
 
 
 @include  mat.core-theme($easyimag-main-theme);

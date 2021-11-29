@@ -10,6 +10,26 @@
   width: 90%;
   margin-top: 20px;
 }
+.web-board-upload-container{
+  width:80% ;
+  height: 80%;
+}
 
+.web-step-double{
+  display: grid;
+  grid-template-columns: 60% 20%;
+}
 
+.web-step-next-button{
+  display: grid;
+  grid-template-rows: 70% 10%;
+  justify-content: center;
+  justify-items: center;
+  background-color: white;
+  margin-left: 20px;
+}
 
+.web-upload-widget{
+  display: grid;
+  grid-template-columns: 80% 20%;
+}

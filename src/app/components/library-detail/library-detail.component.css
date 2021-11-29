@@ -1,0 +1,69 @@
+.web-detail-main-container{
+  display: grid;
+  grid-template-columns: 40% 35% 25%;
+  margin-left: 10px;
+}
+.web-detail-button{
+  right: 0;
+}
+
+.web-detail-select-list{
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.web-detail-select-list-item{
+  margin-top: 5px;
+  height: 80px;
+  font-family: "Roboto Light", serif;
+  font-size: 1.3em;
+
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+
+  border-bottom: 1px solid #cdd0d4;
+
+  align-items: center;
+}
+
+.web-detail-select-list-tag-title{
+  font-family: Roboto, serif;
+}
+
+.web-detail-select-list-tag{
+  color: #cd463c;
+  font-size: 0.8em;
+  text-decoration: underline;
+  margin-left: 2px;
+}
+
+.web-float{
+  float: left;
+}
+
+.web-detail-tip{
+  display: grid;
+  grid-template-columns: 5% 95%;
+}
+
+.web-detail-tip-bar{
+  margin-left: 5px;
+  width: 10px;
+  height: 100%;
+  background-color: #FD6579;
+}
+
+.web-detail-tip-title{
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.web-detail-tip-main{
+  display: grid;
+  grid-template-rows: 80% 20%;
+}
+
+.web-detail-tip-button{
+  margin-left: 45%;
+}
+

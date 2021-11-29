@@ -41,7 +41,7 @@ export class AppComponent {
   links:Link[] = [
     {title:"Home",path:"/",footer:false,hide:false},
     {title:"Upload",path:"/upload",footer:false,hide:false},
-    {title:"Contact Us",path:"/contact",footer:false,hide:false},
+    {title:"My library",path:"/library",footer:false,hide:false},
     {title:"About Us",path:"/about",footer:false,hide:false},
     // {title:"Login",path:"/login",footer:true,hide:false},
     // {title:"Sign up",path:"/signup",footer:false,hide:false},

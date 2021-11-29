@@ -1,0 +1,8 @@
+<div [class]="cardType">
+  <img [src]="url" class="web-image-image"  alt=""/>
+  <span class="web-image-card-title"> {{cardTitle}} </span>
+  <div [class]="extensionClass">
+    <ng-content>
+    </ng-content>
+  </div>
+</div>

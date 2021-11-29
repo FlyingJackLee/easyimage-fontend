@@ -25,6 +25,10 @@ import { UploadComponent } from './components/upload/upload.component';
 import {MatOptionModule} from "@angular/material/core";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatStepperModule} from "@angular/material/stepper";
+import {FileUploadModule} from "ng2-file-upload";
+import { LibraryListComponent } from './components/library-list/library-list.component';
+import { ImageCardComponent } from './components/image-card/image-card.component';
+import { LibraryDetailComponent } from './components/library-detail/library-detail.component';
 
 
 @NgModule({
@@ -35,6 +39,9 @@ import {MatStepperModule} from "@angular/material/stepper";
     HomepageComponent,
     SignupComponent,
     UploadComponent,
+    LibraryListComponent,
+    ImageCardComponent,
+    LibraryDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +67,7 @@ import {MatStepperModule} from "@angular/material/stepper";
     MatOptionModule,
     MatAutocompleteModule,
     MatStepperModule,
+    FileUploadModule,
 
   ],
   providers: [],
