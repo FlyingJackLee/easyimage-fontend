@@ -1,26 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {ToastrService} from "ngx-toastr";
 import {AppCookieService} from "../../services/app-cookie.service";
 import {LibraryService} from "../../services/library.service";
 import {RestBody} from "../../entity/response";
 import {AppSettings} from "../../constant/AppSettings";
+import {Image} from "../../entity/image";
 
-interface Tag{
-  id:number,
-  type:string
-}
 
-interface Image{
-  id:number,
-  name:string,
-  filePath:string,
-  state:string,
-  tags:Tag[],
-  uploadDate:Date,
-
-}
 
 @Component({
   selector: 'app-library-detail',
@@ -34,16 +22,11 @@ export class LibraryDetailComponent implements OnInit {
   images:Image[] = [];
   selectedImages:Image[] = [];
 
-  loopClass:string[] = [
-    "web-image-card-big-1",
-    "web-image-card-small-2","web-image-card-small-2","web-image-card-small-2",
-    "web-image-card-middle-3","web-image-card-middle-3"
-  ]
-
   constructor(
     private route:ActivatedRoute,
     private toastr:ToastrService,
-    private libraryService:LibraryService
+    private libraryService:LibraryService,
+    private router:Router
   ) { }
 
 
@@ -69,17 +52,12 @@ export class LibraryDetailComponent implements OnInit {
           )
       },
     })
+
+    this.libraryService.clearSelectedImages();
   }
 
   styleGenerate(index:number):string{
-    let classes:string = this.loopClass[index%6];
-    if(index%6 == 2){
-      classes += " web-image-card-small-gap";
-    }
-    else if(index%6 == 4){
-      classes += " web-image-card-middle-gap";
-    }
-    return classes;
+    return AppSettings.styleGenerate(index);
   }
 
   select(image:Image){
@@ -91,6 +69,10 @@ export class LibraryDetailComponent implements OnInit {
     this.selectedImages = this.selectedImages.filter((image:Image)=>{
       return image != selectedImage;
     });
-    console.log(this.selectedImages);
+  }
+
+  goToImageGenerator(){
+    this.libraryService.selectImages(this.selectedImages);
+    this.router.navigate(["/generate"],);
   }
 }

@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {AppSettings} from "../constant/AppSettings";
 import {HttpClient, HttpEvent, HttpHeaders, HttpRequest} from "@angular/common/http";
 import {AppCookieService} from "./app-cookie.service";
-import {Observable} from "rxjs";
+import {from, Observable, of} from "rxjs";
 import {RestBody} from "../entity/response";
+import {Image} from "../entity/image";
 
 const LIBRARY_BASE_URL:string = AppSettings.API_BASE_URL + "library/";
 
@@ -12,6 +13,7 @@ const LIBRARY_BASE_URL:string = AppSettings.API_BASE_URL + "library/";
   providedIn: 'root'
 })
 export class LibraryService {
+  selectedImages:Image[] = [];
 
   constructor(private http:HttpClient,
               private cookieService:AppCookieService) { }
@@ -64,6 +66,22 @@ export class LibraryService {
     })
   };
 
+
+  selectImages(images:Image[]){
+    for (const img of images) {
+      this.selectedImages.push(img);
+    }
+  }
+
+  getSelectedImages(){
+    return from(this.selectedImages);
+  }
+
+  clearSelectedImages(){
+    this.selectedImages = [];
+  }
+
+
   getTokenHeader(){
     return  {
       headers: new HttpHeaders(
@@ -76,6 +94,8 @@ export class LibraryService {
         })
     };
   }
+
+
 
 
 

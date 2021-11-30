@@ -1,0 +1,45 @@
+<div class="web-generator-container">
+  <div #imageSource class="web-generator">
+    <div class="web-top-20" *ngFor="let imageGroup of imageGroups | keyvalue">
+      <div class="web-generator-header">
+        <img [src]="'assets/train_' + tagStyle() + '.png'" class="web-generator-header-icon">
+        <div class="web-generator-tag">
+          <h1>Tag</h1>
+          <div class="web-generator-tag-divider"></div>
+          <p>
+            {{imageGroup.key | titlecase }}
+          </p>
+        </div>
+      </div>
+      <app-image-card *ngFor="let image of imageGroup.value;let i = index"
+                      [url]="image_base_url + image.filePath"
+                      [hideTitle]="true"
+                      [cardTitle]="image.name"
+                      [cardType]="styleGenerate(i)"
+                      [unlockHeight]="true"
+      >
+      </app-image-card>
+    </div>
+
+  </div>
+  <div class="web-generator-tips">
+    <div class="web-generator-tips-bar"></div>
+    <div class="web-generator-tips-text">
+      <h1 class="web-text-red">DOWNLOAD</h1>
+      <h1>YOUR</h1>
+      <h1>FINAL</h1>
+      <h1>IMAGE</h1>
+    </div>
+  </div>
+
+  <div>
+    <button class="web-generator-download-btn" (click)="downloadImage()" >
+      Download
+    </button>
+  </div>
+
+  <div>
+    <img  #canvas>
+    <a #downloadLink ></a>
+  </div>
+</div>

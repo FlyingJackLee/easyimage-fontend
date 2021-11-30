@@ -1,0 +1,91 @@
+.web-home-container{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 100%;
+  height: 100%;
+}
+
+.web-big-banner{
+  background-image: url("../../../assets/home-bg.jpg");
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+}
+
+.web-home-tips{
+  margin-top: 50px;
+  width: 74%;
+  height: 60%;
+  border: 10px solid #ff9d9d;
+}
+
+.web-home-tips-title{
+    margin-left: 20px;
+    font-size: 3em;
+    margin-top: 1em;
+    letter-spacing: 0.3em;
+}
+.web-home-tips-title-red{
+  color: #ff7184;
+}
+.web-home-tips-title-black{
+  color: #464855;
+}
+.web-home-tips{
+  display: grid;
+  grid-template-rows: 40% 40% 20%;
+}
+
+.web-home-tips-step{
+  width: 50%;
+  height: 50px;
+  padding-left: 20px;
+  float: left;
+  font-size: 1em;
+  font-family: "Roboto Light", serif;
+  letter-spacing: 0.7em;
+
+}
+.web-home-tips-step-2{
+  margin-top: 50px;
+}
+.web-home-tips-button{
+  background-color: black;
+  color: white;
+  border: 0px;
+  font-family: "Roboto Mono Light", serif;
+  font-size: 1.2em;
+  width: 30%;
+  height: 60%;
+  margin-left: 20px;
+}
+.web-strong{
+  font-family: "Arial Rounded MT Bold", serif;
+}
+
+.web-home-intro-container{
+  width: 35%;
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+
+  background-color: rgba(0,0,0,0.4);
+
+  display: flow;
+}
+
+
+.web-home-intro-title{
+  color: #e7df3c;
+  width: 60%;
+  font-size: 1.2em;
+  font-family: "Roboto", serif;
+  margin-left: 10%;
+  letter-spacing: 0.3em;
+}
+.web-top-20{
+  margin-top: 5%;
+}
+
+

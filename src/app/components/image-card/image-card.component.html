@@ -1,6 +1,8 @@
-<div [class]="cardType">
-  <img [src]="url" class="web-image-image"  alt=""/>
-  <span class="web-image-card-title"> {{cardTitle}} </span>
+<div [class]="cardType" #webCard>
+  <img crossorigin="anonymous"  [src]="url" class="web-image-image"  alt=""/>
+  <ng-container *ngIf="!hideTitle">
+    <span class="web-image-card-title"> {{cardTitle}} </span>
+  </ng-container>
   <div [class]="extensionClass">
     <ng-content>
     </ng-content>

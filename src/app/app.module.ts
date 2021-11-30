@@ -29,6 +29,8 @@ import {FileUploadModule} from "ng2-file-upload";
 import { LibraryListComponent } from './components/library-list/library-list.component';
 import { ImageCardComponent } from './components/image-card/image-card.component';
 import { LibraryDetailComponent } from './components/library-detail/library-detail.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ImageGeneratorComponent } from './components/image-generator/image-generator.component';
 
 
 @NgModule({
@@ -42,6 +44,8 @@ import { LibraryDetailComponent } from './components/library-detail/library-deta
     LibraryListComponent,
     ImageCardComponent,
     LibraryDetailComponent,
+    AboutusComponent,
+    ImageGeneratorComponent,
   ],
   imports: [
     BrowserModule,

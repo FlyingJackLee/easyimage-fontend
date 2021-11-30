@@ -6,6 +6,8 @@ import {SignupComponent} from "./components/signup/signup.component";
 import {UploadComponent} from "./components/upload/upload.component";
 import {LibraryListComponent} from "./components/library-list/library-list.component";
 import {LibraryDetailComponent} from "./components/library-detail/library-detail.component";
+import {ImageGeneratorComponent} from "./components/image-generator/image-generator.component";
+import {AboutusComponent} from "./components/aboutus/aboutus.component";
 
 
 const routes:Routes = [
@@ -15,11 +17,13 @@ const routes:Routes = [
   {path:'upload',component:UploadComponent,data:{animation:"Upload"}},
   {path:'library',component:LibraryListComponent,data:{animation:"libraryList"}},
   {path:'library/:name',component:LibraryDetailComponent,data:{animation:"libraryDetail"}},
-
+  {path:'generate',component:ImageGeneratorComponent},
+  {path:'about',component:AboutusComponent}
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

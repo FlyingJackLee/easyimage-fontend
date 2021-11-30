@@ -34,7 +34,8 @@
               "src/easyimage-plate.scss",
               "src/assets/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
