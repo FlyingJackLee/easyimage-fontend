@@ -14,15 +14,15 @@ export const slideInAnimation =
           left: 0,
           width: '100%'
         })
-      ]),
+      ],{optional:true}),
 
       query(':enter', [
         style({
           opacity:0,
         })
-      ]),
+      ],{optional:true}),
 
-      query(':leave', animateChild()),
+      query(':leave', animateChild(),{optional:true}),
 
 
       group([
@@ -30,14 +30,14 @@ export const slideInAnimation =
           animate('1ms cubic-bezier(.17,.67,.88,.1)', style({
             opacity:0
           }))
-        ]),
+        ],{optional:true}),
 
         query(':enter', [
           animate('300ms cubic-bezier(.17,.67,.88,.1)', style({
             opacity:1,
           }))
-        ])
+        ],{optional:true})
       ]),
-      query(':enter', animateChild()),
+      query(':enter', animateChild(),{optional:true}),
     ]),
   ]);

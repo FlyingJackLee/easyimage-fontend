@@ -27,24 +27,27 @@ export class LibraryListComponent implements OnInit {
     private toastr:ToastrService,
     private cookieService:AppCookieService
     ) {
-    this.libraryService.getAllLibrary().subscribe({
-      next:(res:RestBody)=>{
-        Object.keys(res.data).forEach(
-          (key)=>{
-            this.libraries.push(
-              {
-                name:key,
-                cover: AppSettings.IMG_URL + (res.data[key] as string)
-              }
-            );
-          }
-        )
-      },
-    });
+
   }
 
   ngOnInit(): void {
     this.userService.checkLogin().subscribe({
+        next: ()=>{
+          this.libraryService.getAllLibrary().subscribe({
+            next:(res:RestBody)=>{
+              Object.keys(res.data).forEach(
+                (key)=>{
+                  this.libraries.push(
+                    {
+                      name:key,
+                      cover: AppSettings.IMG_URL + (res.data[key] as string)
+                    }
+                  );
+                }
+              )
+            },
+          });
+        },
         error: err => {
           this.toastr.warning("Authenticate fail, pleas login.", "Bad Authentication");
           this.router.navigate(['login']);

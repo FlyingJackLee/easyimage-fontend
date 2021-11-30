@@ -13,12 +13,12 @@ import {AboutusComponent} from "./components/aboutus/aboutus.component";
 const routes:Routes = [
   {path:'',component:HomepageComponent,data:{animation:"HomePage"}},
   {path:'login',component:LoginComponent,data:{animation:"LoginPage"}},
-  {path:'signup',component:SignupComponent,data:{animation:"Signup"}},
-  {path:'upload',component:UploadComponent,data:{animation:"Upload"}},
-  {path:'library',component:LibraryListComponent,data:{animation:"libraryList"}},
-  {path:'library/:name',component:LibraryDetailComponent,data:{animation:"libraryDetail"}},
-  {path:'generate',component:ImageGeneratorComponent},
-  {path:'about',component:AboutusComponent}
+  {path:'signup',component:SignupComponent,data:{animation:"SignupPage"}},
+  {path:'upload',component:UploadComponent,data:{animation:"UploadPage"}},
+  {path:'library',component:LibraryListComponent,data:{animation:"LibraryListPage"}},
+  {path:'library/:name',component:LibraryDetailComponent,data:{animation:"LibraryDetailImage"}},
+  {path:'generate',component:ImageGeneratorComponent,data:{animation:"LibraryDetailImage"}},
+  {path:'about',component:AboutusComponent,data:{animation:"AboutusPage"}}
 ]
 
 @NgModule({
