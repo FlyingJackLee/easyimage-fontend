@@ -87,12 +87,15 @@ export class AppComponent {
           this.cookieService.remove("token");
           this.cookieService.remove("isLogin");
 
+          this.router.navigate(['login']);
+
           this.refreshAccountArea();
         },
         error:err => {
           this.cookieService.remove("username");
           this.cookieService.remove("token");
           this.cookieService.remove("isLogin");
+          this.router.navigate(['login']);
           this.refreshAccountArea();
         }
       }

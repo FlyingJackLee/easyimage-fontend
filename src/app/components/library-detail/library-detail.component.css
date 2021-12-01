@@ -44,6 +44,7 @@
 .web-detail-tip{
   display: grid;
   grid-template-columns: 5% 95%;
+  min-height: 1000px;
 }
 
 .web-detail-tip-bar{
@@ -65,5 +66,12 @@
 
 .web-detail-tip-button{
   margin-left: 45%;
+}
+
+.web-detail-waiting{
+  color: white;
+  text-align:center;
+  border-radius: 10px;
+  background-color: #55A3D4;
 }
 

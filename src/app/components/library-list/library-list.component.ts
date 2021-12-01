@@ -44,7 +44,11 @@ export class LibraryListComponent implements OnInit {
                     }
                   );
                 }
-              )
+              );
+              if (this.libraries.length <= 0){
+                this.toastr.warning("No Library, please create a new one!","No library");
+                this.router.navigate(['/upload']);
+              }
             },
           });
         },

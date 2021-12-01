@@ -48,6 +48,11 @@ export class LibraryDetailComponent implements OnInit {
                   }
                 );
 
+                if (this.images.length <= 0){
+                  this.toastr.warning("No image, please upload!","No image");
+                  this.router.navigate(['/upload']);
+                }
+
               }}
           )
       },
@@ -75,4 +80,12 @@ export class LibraryDetailComponent implements OnInit {
     this.libraryService.selectImages(this.selectedImages);
     this.router.navigate(["/generate"],);
   }
+
+  isDetected(state:string):boolean{
+    if (state != "DONE"){
+      return false;
+    }
+    return true;
+  }
+
 }

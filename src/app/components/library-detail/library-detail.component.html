@@ -6,7 +6,10 @@
         [cardType]="styleGenerate(i)"
         [extensionPosition]="'right-close'"
       >
-        <button class="web-detail-button" (click)="select(image)"  mat-icon-button color="warn">
+        <ng-container *ngIf="!isDetected(image.state)">
+          <p class="web-detail-waiting">Waiting for Detecting</p>
+        </ng-container>
+        <button *ngIf="isDetected(image.state)" class="web-detail-button" (click)="select(image)"  mat-icon-button color="warn">
           <mat-icon>favorite</mat-icon>
         </button>
       </app-image-card>

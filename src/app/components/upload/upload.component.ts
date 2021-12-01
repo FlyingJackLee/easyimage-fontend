@@ -45,6 +45,9 @@ export class UploadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //clear cache
+    this.presentLibrary = [];
+
     this.userService.checkLogin().subscribe({
       error: err => {
           this.toastr.warning("Authenticate fail, pleas login.", "Bad Authentication");
@@ -56,12 +59,11 @@ export class UploadComponent implements OnInit {
 
     this.libraryService.getAllLibrary().subscribe(
       (res:RestBody)=>{
-        console.log(res);
         Object.keys(res.data).forEach(
           key =>{
             this.presentLibrary.push(key as String)
         }
-        )
+        );
       }
     )
 
@@ -103,7 +105,7 @@ export class UploadComponent implements OnInit {
           },
           error: (err: any) => {
             this.progressInfos[idx].value = 0;
-            this.toastr.warning('Could not upload the file: ' + file.name,"Upload complete");
+            this.toastr.warning('Could not upload the file: ' + file.name,"Upload error");
           },
         })
     }

@@ -1,5 +1,7 @@
+import {environment} from "../../environments/environment";
+
 export class AppSettings{
-  public static BASE_URL:string = "http://127.0.0.1:8080/";
+  public static BASE_URL:string = environment.BASE_URL;
 
   public static API_BASE_URL:string =  AppSettings.BASE_URL + 'api/';
 
