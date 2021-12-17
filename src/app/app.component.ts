@@ -24,7 +24,7 @@ interface Link{
   ],
 })
 export class AppComponent {
-  title = 'easyimage-frontend';
+  title = 'Easyimage';
 
   isFooterDisplay:boolean = false;
 
