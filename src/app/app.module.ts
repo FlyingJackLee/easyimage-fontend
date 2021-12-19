@@ -31,6 +31,8 @@ import { ImageCardComponent } from './components/image-card/image-card.component
 import { LibraryDetailComponent } from './components/library-detail/library-detail.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ImageGeneratorComponent } from './components/image-generator/image-generator.component';
+import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
+import {ShareIconsModule} from "ngx-sharebuttons/icons";
 
 
 @NgModule({
@@ -72,7 +74,8 @@ import { ImageGeneratorComponent } from './components/image-generator/image-gene
     MatAutocompleteModule,
     MatStepperModule,
     FileUploadModule,
-
+    ShareButtonsModule,
+    ShareIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

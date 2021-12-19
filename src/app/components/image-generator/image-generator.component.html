@@ -30,6 +30,7 @@
       <h1>FINAL</h1>
       <h1>IMAGE</h1>
     </div>
+
   </div>
 
   <div>
@@ -43,3 +44,17 @@
     <a #downloadLink ></a>
   </div>
 </div>
+
+
+<share-buttons class="web-generator-share"
+  [include]="['facebook','twitter','linkedin',]"
+  [show]="3"
+  [showText]="true"
+  [url]="'http://www.easyimage.uk'"
+  [title]="'I made beautiful images here!'"
+  [description]="'I made beautiful images here!'"
+  [tags]="allTags()"
+></share-buttons>
+
+
+

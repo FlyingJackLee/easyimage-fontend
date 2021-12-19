@@ -37,6 +37,19 @@ export class ImageGeneratorComponent implements AfterViewInit,OnInit {
     this.imageGroups["Others"]=[];
   }
 
+
+  allTags():string{
+    let tags:string = '';
+
+    Object.getOwnPropertyNames(this.imageGroups).forEach((key)=>{
+      if (key.toLocaleLowerCase() != "others")
+      {
+        tags += "," + key;
+      }
+    })
+    return tags;
+  }
+
   ngOnInit() {
       this.libraryService.getSelectedImages().subscribe(
         (img:Image) =>{
@@ -85,11 +98,12 @@ export class ImageGeneratorComponent implements AfterViewInit,OnInit {
         // @ts-ignore
           // this.canvas.nativeElement.src = canvas.toDataURL();
         this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-        this.downloadLink.nativeElement.download = 'marble-diagram.png';
+        this.downloadLink.nativeElement.download = 'composite.png';
         this.downloadLink.nativeElement.click();
       }
     )
   }
+
 
 
 }
